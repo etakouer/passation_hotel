@@ -1,0 +1,53 @@
+
+/* button 3d */
+
+.btn3d {
+    transition: all .03s linear;
+    position: relative;
+    outline: medium none;
+    -moz-outline-style: none;
+    border: 0px;
+    left: -2px;
+    width: 32px;
+	height: 32px;
+	font-size: 1.3em;
+	padding: 0;
+	border-radius: 20px;
+}
+
+.btn3d:focus {
+    outline: medium none;
+    -moz-outline-style: none;
+}	
+.btn3d:active {
+    left: 0px;
+}
+
+.btn3d.btn-primary {
+    box-shadow: 0 0 0 1px #428bca inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,1px 1px  0 0 #357ebd,1px 1px  0 1px rgba(0, 0, 0, 0.4),1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn3d:active.btn-primary {
+    box-shadow: none;
+}
+
+.btn3d.inertSave
+{
+	box-shadow: none;
+	left: 0px;
+	background: #e4e4e4;
+	color: #333;
+	border: 1px solid #adadad;
+	box-shadow: 1px 1px 4px 1px #cbcbcb inset;
+	cursor: auto;
+}
+
+
+.btn3d.inertShow
+{
+	background: #e4e4e4;
+	color: #333;
+	box-shadow: 0 0 0 1px #adadad inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,1px 1px  0 0 #adadad,1px 1px  0 1px rgba(0, 0, 0, 0.4),1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------- */

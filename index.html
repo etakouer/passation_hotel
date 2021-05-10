@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Passation</title>
+    <link rel="shortcut icon" href="picture/favicon.ico"/>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link href="style/jquery-ui.css" rel="stylesheet" />
+    <link href="style/fjalla-one.css" rel="stylesheet"> 
+    <link href="style/titillium-web.css" rel="stylesheet"> 
+    <link href="style/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/font-awesome.min.css">
+    <link rel="stylesheet" href="script/plugin/contextMenu/jquery.contextMenu.min.css">
+    <link rel="stylesheet" type="text/css" href="style/global.css" />
+  </head>
+  <body>
+  <div id="content">
+    <section id="notes">
+      <h2>Notes <span id="tooltipDelNote" data-toggle="tooltip" data-placement="bottom" title="Supprimer toutes les notes"><span id="delNotes" data-toggle="confirmation"  data-placement="bottom" title="Supprimer toutes les notes ?"></span></span></h2>
+      <form>
+        <div class="input-group">
+          <textarea class="form-control" rows="2" id="textNote" placeholder='Saisissez une note ici, Entrée&#9166; pour valider' ></textarea>
+          <div id="noteHelp"><span id="room" class="icon" data-toggle="tooltip" data-placement="right" title="Inserer un #">#</span><span id="alarm" class="icon" data-toggle="tooltip" data-placement="right" title="Inserer une note RÉVEIL"><span class="glyphicon glyphicon-time"></span></span><span id="taxi" data-toggle="tooltip" class="icon" data-placement="right" title="Inserer une note TAXI"><i class="fa fa-taxi"></i></span></div>
+        </div>
+      </form>
+      <div id="list">
+        <ul>
+        </ul>
+      </div>
+    </section>
+        <section id ="cash">
+      <h2>Caisse <span id="delCash" data-toggle="tooltip" data-placement="bottom" title="Effacer"></span></h2>
+      <div id="control">
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="bill">Billet</label>
+          <input type="text" min="0" class="form-control " id="bill" step="5">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="euro2">2 Euro</label>
+          <input type="text" min="0" class="form-control " id="euro2" step="2">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="euro1">1 Euro</label>
+          <input class="form-control " type="text" min="0" id="euro1" step="1">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent50">50 Cent</label>
+          <input class="form-control " type="text" min="0" id="cent50" step="0.5">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent20">20 Cent</label>
+          <input class="form-control " type="text" min="0" id="cent20" step="0.2">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent10">10 Cent</label>
+          <input class="form-control " type="text" min="0" id="cent10" step="0.1">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent5">5 Cent</label>
+          <input class="form-control " type="text" min="0" id="cent5" step="0.05">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent2">2 Cent</label>
+          <input class="form-control" type="text" min="0" id="cent2" step="0.02">
+        </div>  
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="cent1">1 Cent</label>
+          <input class="form-control" type="text" min="0" id="cent1" step="0.01">
+        </div>
+        <div class="input-group col-xs-10">
+          <label class="input-group-addon" for="loan">Autre</label>
+          <input class="form-control" type="text" min="0" id="loan">
+        </div>
+      </div>
+      <h2 id="total"></h2>
+      <div id="option">
+        <input type="checkbox" id="lock" checked data-toggle="toggle" data-on="Déverrouiller" data-off="Verrouiller">
+         <span data-toggle="tooltip" data-placement="left" title="Enregitrer cette caisse" type="button" id="saveCash"></span>
+        <span data-toggle="tooltip" data-placement="left" title="Caisse à " type="button" id="showCash" ></span>
+        <button data-toggle="modal" href="#modalControl" id="show" class="btn btn-primary"></button>
+        <div class="modal" id="modalControl">
+              <h4 id="modalTitle" ></h4>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="bill">Billet</label>
+                  <input type="text" min="0" disabled="" class="form-control " step="5">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="euro2">2 Euro</label>
+                  <input type="text" min="0" disabled="" class="form-control "  step="2">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="euro1">1 Euro</label>
+                  <input disabled="" class="form-control " type="text" min="0"  step="1">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent50">50 Cent</label>
+                  <input disabled="" class="form-control " type="text" min="0"  step="0.5">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent20">20 Cent</label>
+                  <input disabled="" class="form-control " type="text" min="0" step="0.2">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent10">10 Cent</label>
+                  <input disabled="" class="form-control " type="text" min="0" step="0.1">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent5">5 Cent</label>
+                  <input disabled="" class="form-control " type="text" min="0" step="0.05">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent2">2 Cent</label>
+                  <input disabled="" class="form-control" type="text" min="0" step="0.02">
+                </div>  
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="cent1">1 Cent</label>
+                  <input disabled="" class="form-control" type="text" min="0" step="0.01">
+                </div>
+                <div class="input-group col-xs-10">
+                  <label class="input-group-addon" for="loan">Autre</label>
+                  <input disabled="" class="form-control" type="text" min="0">
+                </div>
+                <h2 id="totalShow"></h2>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span class="glyphicon glyphicon-remove-sign"></span></button>
+      </div>
+      </div>
+    </section>
+  </div>
+    <script src="script/jquery-1.12.4.js"></script>
+    <script src="script/jquery-ui.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/plugin/contextMenu/jquery.contextMenu.min.js"></script>
+    <script src="script/plugin/contextMenu/jquery.ui.position.min.js"></script>
+    <script src="script/plugin/bootstrap-confirmation.min.js"></script>
+    <script src="script/plugin/jquery.editable.min.js"></script>
+    <script src="script/bootstrap-toggle.min.js"></script>
+    <script src="script/global.js"></script>
+  </body>
+</html>
